@@ -7,34 +7,38 @@ para a esquerda como da esquerda para a direita.
 Exemplo:
   ovo
   arara
-  Socorram-me, subi no ônibus em Marrocos
-  Anotaram a data da maratona
 */
 
 void main()
 {
-  char str[100], strC[100];
-  int strLen, v, j = 0;
+  char str[100], strR[100];
+  int strLen, j = 0, verif;
 
   printf("Digite uma frase: ");
-  fgets(str, 100, stdin);
-  strLen = strlen(str);
+  gets(str);
+  strLen = strlen(str) - 1;
 
   for (int i = strLen; i >= 0; i--)
   {
-    strC[j] = str[i];
+    strR[j] = str[i];
     j++;
   }
 
-  printf("%s", strC);
-
   for (int i = 0; i < strLen; i++)
   {
-    if (str[i] != strC[i])
+    if (str[i] != strR[i])
     {
-      printf("Nao eh palindromo.");
+      verif = 0;
       break;
     }
   }
-  printf("Eh um palindromo.");
+
+  if (verif == 0)
+  {
+    printf("Nao eh palindrom.");
+  }
+  else
+  {
+    printf("Eh um palindromo.");
+  }
 }
